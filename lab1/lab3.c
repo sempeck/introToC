@@ -4,27 +4,50 @@
 // b) prostopadłościanu
 // c) stożka
 
-// (Pamiętaj, że użytkownik decyduje o wyborze bryły, a o niezbędne wymiary (i tylko niezbędne) program pyta
-// później)
+// (Pamiętaj, że użytkownik decyduje o wyborze bryły, a o niezbędne wymiary (i tylko niezbędne) program pyta później)
 
 
 #include<stdio.h>
 
 int main() {
-  int n, m;
-  printf("Podaj n:\n");
-  scanf("%d", &n);
-  printf("Podaj m:\n");
+  int m;
+  printf("Program obliczy obiętość i pole powierzchni bryły. Którą wybierasz?\n1) kula\n2) prostopadłościan\n3) stożek\n");
   scanf("%d", &m);
 
-  printf("Podałeś n: %d i m: %d\n", n,m);
-  printf("Dodawanie: %d + %d = %d\n", n,m,n+m);
-  printf("Odejmowanie: %d - %d = %d\n", n,m,n-m);
-  printf("Mnożenie: %d * %d = %d\n", n,m,n*m);
-  printf("Dzielenie: %d / %d = %.2f\n", n,m, n/(float)m);
-  printf("Reszta z dzielenia: %d mod %d = %d\n", n,m,n % m);
-  printf("Dekrementacja: %d, %d\n", --n,--m);
-  printf("Inkrementacja: %d, %d\n", ++n,++m);
+  if (m == 1) {
+    float r;
+    printf("Podaj promień:\n");
+    scanf("%f", &r);
+    printf("Pole powierzchni: %.2f\n", 4*3.14*(r*r));
+    printf("Objętość: %.2f\n", ((4*3.14)/3)*(r*r*r));
+  }
+  else if (m == 2) {
+    float a,b,h;
+    printf("Podaj a:\n");
+    scanf("%f", &a);
+    printf("Podaj b:\n");
+    scanf("%f", &b);
+    printf("Podaj H:\n");
+    scanf("%f", &h);
+    printf("Pole powierzchni: %.2f\n", 2*a*b + 2*b*h + 2*a*h);
+    printf("Objętość: %.2f\n", a*b*h);
+
+  }
+  else if (m == 3) {
+    float h,r,l;
+    printf("Podaj wysokość H:\n");
+    scanf("%f", &h);
+    printf("Podaj tworzącą l:\n");
+    scanf("%f", &l);
+    printf("Podaj promień podstawy r:\n");
+    scanf("%f", &r);
+    printf("Pole powierzchni: %.2f\n", (3.14*r*r)+(3.14*r*l));
+    printf("Objętość: %.2f\n", ((3.14*r*r*h)/3));    
+  }
+
+  else {
+    printf("Nieprawidłowy wybór...\n");
+  }
 
   getchar();
   getchar();
