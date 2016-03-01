@@ -6,12 +6,13 @@
 
 // (Pamiętaj, że użytkownik decyduje o wyborze bryły, a o niezbędne wymiary (i tylko niezbędne) program pyta później)
 
+// + walec
 
 #include<stdio.h>
 
 int main() {
   int m;
-  printf("Program obliczy obiętość i pole powierzchni bryły. Którą wybierasz?\n1) kula\n2) prostopadłościan\n3) stożek\n");
+  printf("Program obliczy obiętość i pole powierzchni bryły. Którą wybierasz?\n1) kula\n2) prostopadłościan\n3) stożek\n4) walec\n");
   scanf("%d", &m);
 
   if (m == 1) {
@@ -44,6 +45,16 @@ int main() {
     printf("Pole powierzchni: %.2f\n", (3.14*r*r)+(3.14*r*l));
     printf("Objętość: %.2f\n", ((3.14*r*r*h)/3));    
   }
+  else if (m == 4) {
+    float h,r;
+    printf("Podaj wysokość H:\n");
+    scanf("%f", &h);
+    printf("Podaj promień podstawy r:\n");
+    scanf("%f", &r);
+    printf("Pole powierzchni: %.2f\n", (2*3.14*r*r)+(2*3.14*r*h)); // 2*pi*r*r + 2*pi*r*h
+    printf("Objętość: %.2f\n", (3.14*r*r*h)); // pi*r*r *h 
+  }
+
 
   else {
     printf("Nieprawidłowy wybór...\n");

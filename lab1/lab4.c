@@ -5,20 +5,26 @@
 
 int main() {
 
-  float m,n;
+  float m,n,s;
   float suma = 0;
   printf("Program policzy średnią ocen. Ile masz przedmiotów?\n");
   scanf("%f", &m);
+  printf("Jaki jest próg, by dostać stypendium?\n");
+  scanf("%f", &s);
 
   for (int i = 1; i <= m; i++) {
+  //  do {
     printf("Ocena %d: ", i);
-    scanf("%f", &n);  
-    suma = suma + n;
+    scanf("%f", &n); 
+    //} 
+    if ((n > 2) || (n < 5)) {  
+     suma = suma + n; 
+   }   
   };
 
   printf("Twoja średnia: %.2f\n", suma/m);
 
-  if (suma/m > 4.1) {
+  if (suma/m > s) {
     printf("Hej! Dostaniesz stypendium.");
   }
   else
