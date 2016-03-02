@@ -1,0 +1,2 @@
+// Zadanie 2 (8 pkt.)
+// Napisz program, który pozwoli określić jak długo należy przetrzymać lokatę kapitałową w banku, tak aby osiągnąć zadaną przez użytkownika wartość odsetek. Pamiętać należy, iż wysokość kwoty początkowej jak i oprocentowanie w skali roku oraz okres kapitalizacji i oczekiwana kwota odsetek podawane są przez użytkownika. 

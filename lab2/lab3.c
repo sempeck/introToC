@@ -1,0 +1,2 @@
+// Zadanie 3 (4 pkt.)
+// Napisz program, który wczyta 15 liczb różnych liczb całkowitych do jednowymiarowej tablicy, a następnie znajduje największą i najmniejszą z nich, a także ich pozycje w zbiorze.
