@@ -14,6 +14,7 @@ int main() {
   for (int i = 1; i<=n; i++) {
 // silnia
     s = s*i;
+    printf("!%d = %0.f\n", i, s);
 
 // ciąg
     if (i % 2 == 0) {
@@ -33,3 +34,10 @@ int main() {
   getchar();
 
 }
+
+
+// zad 1 -> wyświetlić wszystkie od 1 do n 
+// zad bank -> wyliczanie, po cząseteczkowych kwota wyświetlana
+// zad 4 -> 2 funkcje : średnia całej macierzy, obrócenie macierzy -> wiersze stają się kolumnami
+
+

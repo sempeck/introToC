@@ -15,7 +15,7 @@ void pokaz (int tab[10][10], int s) {
 
 int main () {
 
-///// WPISYWANIE /////////
+///// WPISYWANIE ///////////
   int liczba;
   int s;
   int tab[10][10];
@@ -40,7 +40,8 @@ pokaz(tab,s);
 int x,k,r;
 do {
 int suma = 0;
-  printf("Co chcesz obliczyć?\n1) Suma wartości poniżej przekątnej.\n2) Suma powyżej przekątnej.\n3) Suma w wierszu.\n4) Suma w kolumnie.\n5) Zakończ.\n");
+
+  printf("Co chcesz obliczyć?\n1) Suma wartości poniżej przekątnej.\n2) Suma powyżej przekątnej.\n3) Suma w wierszu.\n4) Suma w kolumnie.\n5) Średnia macierzy.\n6) Obrócenie macierzy.\n7) Zakończ.\n");
 
   scanf("%d", &x);
 
@@ -87,14 +88,49 @@ int suma = 0;
           printf("Suma kolumny %d = %d\n", k,suma);
           pokaz(tab,s);
           break;
+
+   case 5:
+          float srednia;
+          srednia = 0;
+          for (int i=0;i<s;i++){
+            for (int j=0;j<s;j++) {
+              suma = suma + tab[i][j];
+            }
+          }
+          srednia = (suma/(s*s));
+          printf("suma = %d, Średnia = %.2f\n", suma, srednia);
+          pokaz(tab,s);
+          break;
    
-   case 5:break;
+   case 6:
+          int tab2[10][10];
+          for (int i=0;i<s;i++){
+            for (int j=0;j<s;j++) {
+              tab2[i][j] = tab[j][i];
+            }
+          }
+          for (int i=0;i<s;i++){
+            for (int j=0;j<s;j++) {
+              tab[i][j] = tab2[i][j];
+            }
+          }
+          pokaz(tab,s);
+          break;
+
+   case 7:break;
    
    default :printf("Nie ma takiej opcji.");
    }
-  } while (x!=5);
+  } while (x!=7);
 }
+
 /////////////////////////////
+
+    // 1 2 3       1 4 7
+    // 4 5 6       2 5 8
+    // 7 8 9       3 5 9
+
+
 
 // Zadanie 4 (8 pkt.)
 // Napisz program umożliwiający realizację następujących zadań na macierzy kwadratowej o ustalonym dowolnym wymiarze:

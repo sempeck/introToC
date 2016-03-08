@@ -21,8 +21,8 @@ int main () {
   nowaKwota = kwota;
 
   do {
-    nowaKwota = nowaKwota + (nowaKwota*(oprocentowanie*0.01));
-    // printf("Kwota po kapitalizacji: %.2f zł\n", nowaKwota);
+    nowaKwota = nowaKwota + (nowaKwota*(oprocentowanie/kapitalizacja*0.01));
+    printf("Kwota po kapitalizacji: %.2f zł\n", nowaKwota);
     
     noweOdsetki = nowaKwota - kwota;
     czas = czas + kapitalizacja;
