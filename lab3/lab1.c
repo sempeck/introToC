@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+
+// 1. średnia wszystkich elementów macierzy - funkcja
+
+
 //// RYSOWANIE /////////////
 void pokaz (int tab[10][10], int s) {
   printf("\n");
@@ -12,6 +16,22 @@ void pokaz (int tab[10][10], int s) {
   printf("\n");
 }
 ////////////////////////////
+
+///ŚREDNIA /////////////////////
+void srednia (int tab[10][10], int s) {
+float suma = 0;
+float srednia = 0;
+    for (int i=0;i<s;i++) {
+      for (int j=0;j<s;j++) {
+        suma = suma + tab[i][j];
+      }
+    }
+    srednia = (suma / (s*s));  
+    printf("Średnia macierzy = %.2f\n", srednia);
+    pokaz(tab,s);
+}
+
+
 void ponizejPrzekatnej (int tab[10][10], int s) {
   int suma = 0;
 for (int i=0;i<s;i++){
@@ -123,7 +143,7 @@ int main () {
 wpisywanie(tab,s);
 do {
 
-  printf("Co chcesz obliczyć?\n1) Suma wartości poniżej przekątnej.\n2) Suma powyżej przekątnej.\n3) Suma w wierszu.\n4) Suma w kolumnie.\n5) Średnia macierzy.\n6) Obrócenie macierzy.\n7) Zakończ.\n");
+  printf("Co chcesz obliczyć?\n1) Suma wartości poniżej przekątnej.\n2) Suma powyżej przekątnej.\n3) Suma w wierszu.\n4) Suma w kolumnie.\n5) Średnia macierzy.\n6) Obrócenie macierzy.\n7) Zakończ.\n8) Średnia.\n");
 
   scanf("%d", &x);
 
@@ -155,6 +175,10 @@ do {
 
    case 7:break;
    
+   case 8:
+      srednia(tab,s); 
+        break;
+
    default :printf("Nie ma takiej opcji.");
    }
   } while (x!=7);
